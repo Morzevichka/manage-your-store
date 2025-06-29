@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.morzevichka.manageyourstore.controllers.center.categories.CategoryController">
+   <children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="TOP_RIGHT">
+               <Button onAction="#updateTable" text="Обновить" />
+               <padding>
+                  <Insets bottom="5" />
+               </padding>
+            </HBox>
+            <HBox spacing="10.0">
+               <children>
+                  <TextField fx:id="searchTextField" promptText="Найти категорию" HBox.hgrow="ALWAYS" onKeyPressed="#clearSelectionKeyPressed"/>
+                  <ToggleButton fx:id="notIgnoreCaseToggleButton" mnemonicParsing="false" text="не игнорировать регистр" />
+                  <ToggleButton fx:id="fullWordToggleButton" mnemonicParsing="false" text="Слово целиком" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </HBox>
+            <TableView fx:id="categoriesTable" VBox.vgrow="ALWAYS" onKeyPressed="#clearSelectionKeyPressed">
+              <columns>
+                <TableColumn fx:id="idColumn" text="Id" />
+                <TableColumn fx:id="nameColumn" text="Имя" />
+              </columns>
+            </TableView>
+            <HBox>
+               <children>
+                  <Button onAction="#createCategory" text="Создать категорию" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="removeButton" onAction="#removeCategory" text="Удалить" />
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</AnchorPane>

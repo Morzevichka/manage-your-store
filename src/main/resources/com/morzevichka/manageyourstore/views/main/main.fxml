@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="mainScene" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.morzevichka.manageyourstore.controllers.main.MainController">
+   <top>
+       <fx:include fx:id="topMenu" source="topMenu.fxml" />
+   </top>
+    <left>
+        <fx:include fx:id="leftMenu" source="leftMenu.fxml" />
+    </left>
+   <center>
+   </center>
+</BorderPane>

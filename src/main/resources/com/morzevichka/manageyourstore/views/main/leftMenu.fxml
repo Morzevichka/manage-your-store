@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxWidth="260.0" minWidth="260.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.morzevichka.manageyourstore.controllers.main.LeftMenuController">
+<padding>
+    <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+</padding>
+<children>
+    <Label text="Продажи" />
+    <VBox prefHeight="200.0" prefWidth="100.0">
+        <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+        </padding>
+        <children>
+            <Hyperlink onAction="#purchase" fx:id="purchase" text="Оформить покупку" />
+            <Hyperlink onAction="#report" fx:id="report" text="Отчетность" />
+        </children>
+    </VBox>
+    <Label text="Справочник"/>
+    <VBox prefHeight="200.0" prefWidth="100.0">
+        <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+        </padding>
+        <children>
+            <Hyperlink onAction="#products" text="Список товаров" />
+            <Hyperlink onAction="#categories" text="Категории товаров" />
+        </children>
+    </VBox>
+    <Label fx:id="adminLabel" alignment="CENTER" prefHeight="17.0" text="Администратирование" textAlignment="CENTER" visible="false" />
+    <VBox fx:id="adminVbox" prefHeight="200.0" prefWidth="100.0" visible="false">
+        <children>
+            <Hyperlink fx:id="employee_list" text="Сотрудники" />
+        </children>
+        <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+        </padding>
+    </VBox>
+</children>
+</VBox>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<MenuBar BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.morzevichka.manageyourstore.controllers.main.TopMenuController">
+<menus>
+    <Menu mnemonicParsing="false" text="Файлы">
+        <items>
+            <MenuItem fx:id="clearMainScreen" mnemonicParsing="false" onAction="#clearMainScreen" text="Очистить окно" />
+            <MenuItem fx:id="closeWindow" mnemonicParsing="false" onAction="#closeWindow" text="Закрыть окно" />
+            <MenuItem fx:id="exitApp" mnemonicParsing="false" onAction="#exitApp" text="Выйти из приложения" />
+        </items>
+    </Menu>
+    <Menu mnemonicParsing="false" text="Товары">
+        <items>
+            <MenuItem mnemonicParsing="false" text="Delete"/>
+        </items>
+    </Menu>
+    <Menu mnemonicParsing="false" text="Помощь">
+        <items>
+            <MenuItem mnemonicParsing="false" text="Подробнее" />
+        </items>
+    </Menu>
+    <Menu mnemonicParsing="false" text="Найстройки пользователя">
+        <items>
+            <MenuItem fx:id="logIn" mnemonicParsing="false" onAction="#logIn" text="Вход" />
+            <MenuItem fx:id="account" mnemonicParsing="false" onAction="#account" text="Аккаунт" visible="false" />
+            <MenuItem fx:id="exit" mnemonicParsing="false" onAction="#exit" text="Выход" visible="false" />
+        </items>
+    </Menu>
+</menus>
+</MenuBar>

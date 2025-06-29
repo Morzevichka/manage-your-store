@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.morzevichka.manageyourstore.controllers.center.report.ReportController">
+   <top>
+      <VBox spacing="10">
+         <children>
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Отчётность">
+               <padding>
+                  <Insets left="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <HBox spacing="20">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label text="Общее количество товаров:" />
+                        <Label fx:id="totalProductsLabel" style="-fx-font-size: 16px;" text="0" />
+                     </children>
+                     <HBox.margin>
+                        <Insets top="1.0" />
+                     </HBox.margin>
+                  </VBox>
+                   <VBox>
+                       <children>
+                           <Label text="Продано товаров всего:" />
+                           <Label fx:id="soldProductsLabel" style="-fx-font-size: 16px;" text="0" />
+                       </children>
+                   </VBox>
+                   <VBox>
+                       <children>
+                           <Label text="Количество заказов (всего):" />
+                           <Label fx:id="totalOrdersLabel" style="-fx-font-size: 16px;" text="0" />
+                       </children>
+                   </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+    <center>
+        <TabPane>
+            <Tab fx:id="productsTab" text="Проданные товары"/>
+
+            <Tab fx:id="ordersTab" text="Заказы" />
+
+            <Tab fx:id="workersTab" text="Работа сотрудников" />
+        </TabPane>
+    </center>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</BorderPane>
