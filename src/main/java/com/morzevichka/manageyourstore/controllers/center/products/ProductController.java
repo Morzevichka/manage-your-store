@@ -220,7 +220,7 @@ public class ProductController implements Initializable {
 
         String name = product.getName();
         String quantity = String.valueOf(product.getQuantity());
-        String categoryName = product.getCategory().getName();
+        String categoryName = product.getCategory() == null ? "Без категории" : product.getCategory().getName();
         String price = String.valueOf(product.getCost());
         String barcode = product.getBarcode();
 

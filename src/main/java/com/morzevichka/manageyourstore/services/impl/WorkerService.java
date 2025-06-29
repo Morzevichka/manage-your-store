@@ -24,7 +24,7 @@ public interface WorkerService {
 
     Worker loginWorker(String username, String password) throws AuthenticationException;
 
-    void registerWorker(String firstName, String secondName, String username, String password, Role role, BigDecimal salary);
+    void registerWorker(Worker worker);
 
     void changePassword(String username, String currentPassword, String newPassword);
 

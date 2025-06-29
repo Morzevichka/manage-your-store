@@ -2,8 +2,12 @@ package com.morzevichka.manageyourstore.utils;
 
 import com.morzevichka.manageyourstore.entity.*;
 
+import com.morzevichka.manageyourstore.repository.WorkerRepository;
+import com.morzevichka.manageyourstore.services.WorkerServiceImpl;
+import com.morzevichka.manageyourstore.services.impl.WorkerService;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.model.source.spi.PluralAttributeElementSourceAssociation;
 import org.hibernate.cfg.Configuration;
 
 import javax.cache.CacheManager;
@@ -19,7 +23,6 @@ public final class HibernateUtil {
     static {
         try {
             String dbProfile = System.getProperty("db", "h2");
-            System.out.println(dbProfile);
 
             Configuration configuration = new Configuration();
 
@@ -71,6 +74,7 @@ public final class HibernateUtil {
             configuration.addAnnotatedClass(Worker.class);
 
             sessionFactory = configuration.buildSessionFactory();
+
         } catch (Exception e) {
             System.err.println("Initial SessionFactory creation failed: "+ e);
             throw new ExceptionInInitializerError(e);
@@ -85,5 +89,20 @@ public final class HibernateUtil {
 
     public static void close() {
         sessionFactory.close();
+    }
+
+    public static void setUpTestUserForH2DB() {
+        if (System.getProperty("db").equals("h2")) {
+            WorkerService workerService = new WorkerServiceImpl();
+            Worker worker = new Worker();
+            worker.setFirstName("test");
+            worker.setSecondName("test");
+            worker.setUsername("test");
+            worker.setPasswordHash(PasswordUtils.encrypt("test"));
+            worker.setRole(Role.ADMIN);
+            workerService.registerWorker(worker);
+        } else {
+            throw new IllegalStateException("Database should be H2");
+        }
     }
 }

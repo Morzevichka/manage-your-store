@@ -20,6 +20,7 @@ public class App extends Application {
         int height = (int) screenRes.getHeight();
 
         HibernateUtil.getSessionFactory();
+        HibernateUtil.setUpTestUserForH2DB();
 
         Scene scene = new Scene(LoadStagesUtil.loadFXML("views/main/main").load());
         primaryStage.setScene(scene);

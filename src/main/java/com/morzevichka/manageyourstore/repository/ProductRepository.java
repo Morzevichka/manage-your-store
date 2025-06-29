@@ -35,7 +35,7 @@ public class ProductRepository extends GenericRepository<Product, Long> {
     }
 
     public int countProducts() {
-        return((BigDecimal) HibernateUtil.getSessionFactory().fromSession(session ->
+        return ((BigDecimal) HibernateUtil.getSessionFactory().fromSession(session ->
                 session.createNativeQuery("SELECT COUNT(*) FROM PRODUCTS").uniqueResult()
         )).intValue();
     }

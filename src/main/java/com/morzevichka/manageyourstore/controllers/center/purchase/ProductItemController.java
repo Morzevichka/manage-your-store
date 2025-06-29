@@ -7,6 +7,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 
+import java.io.InputStream;
+import java.util.Objects;
+
 public class ProductItemController {
     @FXML private ImageView quantityIcon;
     @FXML private Label productName;
@@ -15,7 +18,10 @@ public class ProductItemController {
     @FXML private Label productPrice;
 
     public void setData(Product product) {
-        quantityIcon.setImage(new Image(getClass().getResource("/org/example/views/center/purchase/vecteezy_box-carton-delivery-line-style-icon_2590547.jpg").toExternalForm()));
+        InputStream imageStream = getClass().getResourceAsStream("/com/morzevichka/manageyourstore/views/center/purchase/vecteezy_box-carton-delivery-line-style-icon_2590547.jpg");
+        Objects.requireNonNull(imageStream);
+        Image image = new Image(imageStream);
+        quantityIcon.setImage(image);
         productName.setText(product.getName());
         productBarcode.setText(product.getBarcode());
         productQuantity.setText(String.valueOf(product.getQuantity()));

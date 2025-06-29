@@ -31,12 +31,12 @@
          <children>
             <Label text="Логин:" />
             <Label text="Пароль:" GridPane.rowIndex="1" />
-            <PasswordField fx:id="passwordField" alignment="CENTER" promptText="Password" text="anx00di1" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <PasswordField fx:id="passwordField" alignment="CENTER" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="14.0" />
                </font>
             </PasswordField>
-            <TextField fx:id="usernameField" alignment="CENTER" promptText="Login" text="fifi" GridPane.columnIndex="1">
+            <TextField fx:id="usernameField" alignment="CENTER" promptText="Login" GridPane.columnIndex="1">
                <font>
                   <Font size="14.0" />
                </font>

@@ -58,20 +58,7 @@ public class WorkerServiceImpl implements WorkerService {
         return worker;
     }
 
-    public void registerWorker(String firstName, String secondName, String username, String password, Role role, BigDecimal salary) {
-        try {
-            ValidationUtil.isValidPassword(password);
-        } catch (Exception e) {
-            throw e;
-        }
-
-        Worker worker = new Worker();
-        worker.setFirstName(firstName);
-        worker.setSecondName(secondName);
-        worker.setUsername(username);
-        worker.setPasswordHash(PasswordUtils.encrypt(password));
-        worker.setRole(role);
-        worker.setSalary(salary);
+    public void registerWorker(Worker worker) {
         worker.setRegisterDate(new Timestamp(System.currentTimeMillis()));
         try {
             saveWorker(worker);
